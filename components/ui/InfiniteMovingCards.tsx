@@ -13,7 +13,8 @@ export const InfiniteMovingCards = ({
   items: {
     quote: string;
     name: string;
-    title: string;
+    location: string;
+    image: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -87,7 +88,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="relative w-[90vw] max-w-full shrink-0 rounded-2xl border border-b-0   p-5 md:p-16 md:w-[60vw] border-slate-800"
+            className="relative w-[80vw] max-w-full shrink-0 rounded-2xl border border-b-0 p-5 md:p-10 md:w-[60vw] border-slate-800"
             style={{
               background: "rgb(4,7,29)",
               backgroundColor:
@@ -100,20 +101,24 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-sm md:text-lg leading-[1.6] font-normal text-white">
+              <p className="relative z-20 text-sm md:text-base leading-[1.6] font-normal text-gray-300 text-justify">
                 {item.quote}
-              </span>
+              </p>
               <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
+                <span className="flex items-center  gap-2">
                   <div className="me-3">
-                    <img src="/profile.svg" alt="profile" />
+                    <img
+                      src={item.image}
+                      alt="profile"
+                      className="w-12 h-12 rounded-full object-cover shadow"
+                    />
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-xl leading-[1.6] font-bold text-white">
+                  <div className="flex flex-col">
+                    <span className="text-xl font-bold text-white">
                       {item.name}
                     </span>
-                    <span className="text-sm leading-[1.6] font-normal text-white-200">
-                      {item.title}
+                    <span className="text-sm  font-normal text-white-200">
+                      {item.location}
                     </span>
                   </div>
                 </span>

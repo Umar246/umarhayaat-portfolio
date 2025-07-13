@@ -1,24 +1,53 @@
 @import "tailwindcss";
 
+/* Global mein add karo (e.g. globals.css) */
+.hide-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;          /* Chrome, Safari, Edge */
+}
+
+
+/* Add to app/globals.css */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px; /* Adjust based on navbar height */
+  }
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] scroll-smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll issues */
+  }
+  /* Add scroll margin to all sections */
+  section[id] {
+    scroll-margin-top: 120px;
+  }
+  /* Fix for empty space at bottom */
+  main {
+    min-height: 100vh;
+    position: relative;
+  }
+}
+
 /* 1️⃣ Global Design Tokens via @theme */
 @theme {
-
   --container-2xl: 1400px;
-
 
   --color-black: #000;
   --color-black-100: #000319;
-  --color-black-200: rgba(17,25,40,0.75);
-  --color-black-300: rgba(255,255,255,0.125);
+  --color-black-200: rgba(17, 25, 40, 0.75);
+  --color-black-300: rgba(255, 255, 255, 0.125);
 
-  --color-white: #FFF;
-  --color-white-100: #BEC1DD;
-  --color-white-200: #C1C2D3;
+  --color-white: #fff;
+  --color-white-100: #bec1dd;
+  --color-white-200: #c1c2d3;
 
-  --color-blue-100: #E4ECFF;
-  --color-purple: #CBACF9;
+  --color-blue-100: #e4ecff;
+  --color-purple: #cbacf9;
 
-  
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -45,14 +74,15 @@
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
-  --animate-spotlight: spotlight 2s ease .75s 1 forwards;
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
   --animate-shimmer: shimmer 2s linear infinite;
   --animate-first: moveVertical 30s ease infinite;
   --animate-second: moveInCircle 20s reverse infinite;
   --animate-third: moveInCircle 40s linear infinite;
   --animate-fourth: moveHorizontal 40s ease infinite;
   --animate-fifth: moveInCircle 20s ease infinite;
-  --animate-scroll: scroll var(--animation-duration,40s) var(--animation-direction,forwards) linear infinite;
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
 }
 
 /* 2️⃣ Inline theme override for spotlight (works correctly) */
@@ -63,12 +93,20 @@
 /* 3️⃣ Define keyframes */
 @layer base {
   @keyframes accordion-down {
-    from { height: 0 }
-    to   { height: var(--radix-accordion-content-height) }
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
   }
   @keyframes accordion-up {
-    from { height: var(--radix-accordion-content-height) }
-    to   { height: 0 }
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
   @keyframes spotlight {
     0% {
@@ -81,33 +119,56 @@
     }
   }
   @keyframes shimmer {
-    from { background-position: 0 0 }
-    to { background-position: -200% 0 }
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
   }
   @keyframes moveHorizontal {
-    0% { transform: translateX(-50%) translateY(-10%) }
-    50% { transform: translateX(50%) translateY(10%) }
-    100% { transform: translateX(-50%) translateY(-10%) }
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
   }
   @keyframes moveVertical {
-    0%,100% { transform: translateY(-50%) }
-    50% { transform: translateY(50%) }
+    0%,
+    100% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
   }
   @keyframes moveInCircle {
-    0% { transform: rotate(0deg) }
-    50% { transform: rotate(180deg) }
-    100% { transform: rotate(360deg) }
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
   @keyframes scroll {
-    to { transform: translate(calc(-50% - 0.5rem)) }
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
   }
 }
 
 /* 4️⃣ Default light theme vars */
 @layer base {
   :root {
-    --background:   0 0% 100%;
-    --foreground:   240 10% 3.9%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -141,8 +202,8 @@
 /* 5️⃣ Dark mode overrides */
 @layer theme {
   .dark {
-    --background:   240 10% 3.9%;
-    --foreground:   0 0% 98%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { cn } from "@/lib/utils";
@@ -6,8 +7,22 @@ import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 
 const Hero = () => {
+  const handleSmoothScroll = (
+      e: React.MouseEvent<HTMLAnchorElement>,
+      link: string
+    ) => {
+      e.preventDefault();
+      if (link.startsWith("#")) {
+        const targetId = link.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 100; // Adjust offset as needed
+          window.scrollTo({ top: offsetTop, behavior: "smooth" });
+        }
+      }
+    };
   return (
-    <div className="pb-20 pt-36 relative">
+    <div className="pb-20 pt-36 relative" id="hero">
       {/* Background container with z-0 to position behind content */}
       <div className="absolute inset-0 z-0">
         {/* Spotlight effects */}
@@ -51,9 +66,9 @@ const Hero = () => {
           <p className="text-center text-white md:tracking-wider my-4 text-sm md:text-lg">
             Hi I&apos;m Umar Hayaat, a MERN Stack Developer based in Pakistan.
           </p>
-          <a href="#about">
+          <a  onClick={(e) => handleSmoothScroll(e, "#projects")}>
             <MagicButton
-              title="Show my work"
+              title="Explore my work"
               icon={<FaLocationArrow />}
               position="right"
               otherClasses="gap-2"
