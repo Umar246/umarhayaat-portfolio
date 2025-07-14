@@ -64,7 +64,7 @@ const Hero = () => {
             words="Transforming Concepts into Seamless User Experiences"
           />
           <p className="text-center text-white md:tracking-wider my-4 text-sm md:text-lg">
-            Hi I&apos;m Umar Hayaat, a MERN Stack Developer based in Pakistan.
+            Hi I&apos;m Umar Hayaat, a MERN Stack & React Native Developer based in Pakistan.
           </p>
           <a  onClick={(e) => handleSmoothScroll(e, "#projects")}>
             <MagicButton
