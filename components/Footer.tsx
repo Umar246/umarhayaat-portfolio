@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { IoMdMail } from "react-icons/io";
 import { MdAccessTimeFilled } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
 // import Link from "next/link";
 
 const socialMedia = [
@@ -36,10 +37,13 @@ const Footer = () => {
     <footer className="w-full pt-10 pb-10 text-white" id="contact">
       {/* background grid */}
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
+        <Image
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-50 "
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full h-full opacity-50"
         />
       </div>
       <div className="flex flex-col items-center relative z-10">

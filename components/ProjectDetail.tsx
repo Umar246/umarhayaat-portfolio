@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaArrowLeft} from "react-icons/fa";
+import { FaGithub, FaArrowLeft } from "react-icons/fa";
 import { projects } from "@/data";
+import Image from "next/image";
 
 interface ProjectDetailProps {
   projectId: number;
@@ -18,7 +19,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
 
   return (
     <motion.div
-    initial={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[9999] bg-black-100 hide-scrollbar"
@@ -71,10 +72,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
             {/* Gallery */}
             <div className="w-full">
               <div className="relative mb-4">
-                <img
+                <Image
                   src={project.images[selectedImage]}
                   alt={`${project.title} - Image ${selectedImage + 1}`}
-                  className="w-full h-auto  object-cover rounded-lg"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-auto object-cover rounded-lg"
                 />
               </div>
               <div className="flex gap-3 overflow-x-auto pb-2">
@@ -88,9 +92,12 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
                         : "border-transparent hover:border-white/30"
                     }`}
                   >
-                    <img
+                    <Image
                       src={img}
                       alt={`Thumbnail ${idx + 1}`}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -117,8 +124,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
               <div>
                 <p className="text-sm py-4 text-purple">
                   Sorry, due to privacy concerns, the live demo is not
-                  available. However, you can still explore the source code
-                  on GitHub.
+                  available. However, you can still explore the source code on
+                  GitHub.
                 </p>
                 <a
                   href={project.githubLink}

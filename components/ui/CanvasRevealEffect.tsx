@@ -192,7 +192,7 @@ const ShaderMaterial = ({
   uniforms: Uniforms;
 }) => {
   const { size } = useThree();
-const ref = useRef<THREE.Mesh | null>(null);
+  const ref = useRef<THREE.Mesh | null>(null);
   let lastFrameTime = 0;
 
   useFrame(({ clock }) => {
@@ -204,15 +204,17 @@ const ref = useRef<THREE.Mesh | null>(null);
     lastFrameTime = timestamp;
 
     if (!ref.current) return;
-const material = ref.current.material as THREE.ShaderMaterial;
+    const material = ref.current.material as THREE.ShaderMaterial;
     const timeLocation = material.uniforms.u_time;
     timeLocation.value = timestamp;
   });
 
   const getUniforms = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const preparedUniforms: any = {};
 
     for (const uniformName in uniforms) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const uniform: any = uniforms[uniformName];
 
       switch (uniform.type) {
@@ -283,6 +285,7 @@ const material = ref.current.material as THREE.ShaderMaterial;
   }, [size.width, size.height, source]);
 
   return (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <mesh ref={ref as any}>
       <planeGeometry args={[2, 2]} />
       <primitive object={material} attach="material" />
