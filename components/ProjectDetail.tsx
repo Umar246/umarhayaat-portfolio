@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaArrowLeft, FaTimes } from "react-icons/fa";
+import { FaGithub, FaArrowLeft} from "react-icons/fa";
 import { projects } from "@/data";
 
 interface ProjectDetailProps {
@@ -46,7 +46,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
               {project.title}
             </h1>
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-5 mt-5 md:mt-10">
               <span
                 className={`px-3 py-1 rounded-full text-sm font-medium ${
                   {

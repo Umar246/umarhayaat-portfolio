@@ -1,12 +1,36 @@
 "use client";
-import { FaLocationArrow } from "react-icons/fa6";
-import { socialMedia } from "@/data";
+import {
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+  FaLocationArrow,
+} from "react-icons/fa6";
+// import { socialMedia } from "@/data";
 // import MagicButton from "./ui/MagicButton";
 import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
 import { IoMdMail } from "react-icons/io";
 import { MdAccessTimeFilled } from "react-icons/md";
+import Link from "next/link";
 // import Link from "next/link";
+
+const socialMedia = [
+  {
+    id: 1,
+    icon: <FaGithub size={20} />,
+    link: "https://github.com/Umar246",
+  },
+  {
+    id: 2,
+    icon: <FaFacebook size={20} />,
+    link: "https://www.facebook.com/umar.hayaat.391",
+  },
+  {
+    id: 3,
+    icon: <FaLinkedin size={20} />,
+    link: "https://www.linkedin.com/in/umarhayaat",
+  },
+];
 const Footer = () => {
   return (
     <footer className="w-full pt-10 pb-10 text-white" id="contact">
@@ -98,18 +122,21 @@ const Footer = () => {
       </div>
       {/* Footer Bottom */}
 
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center relative z-10">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Umar Hayaat
+      <div className="flex mt-16 mb-10 md:flex-row flex-col justify-between items-center relative z-10">
+        <p className="md:text-base text-gray-400 text-sm md:font-normal font-light">
+          Copyright © {new Date().getFullYear()} Umar Hayaat
         </p>
         <div className="flex items-center md:gap-3 gap-6 mt-5 md:mt-0">
           {socialMedia.map((info) => (
-            <div
+            <Link
+              href={info.link}
+              target="_blank"
               key={info.id}
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 roundedlg border border-black-300"
             >
-              <img src={info.img} alt="icons" width={20} height={20} />
-            </div>
+              {/* {info.icon} */}
+              {info.icon}
+            </Link>
           ))}
         </div>
       </div>
