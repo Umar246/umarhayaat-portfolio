@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Umar's Portfolio",
   description: "Modern & Minimalist Portfolio",
+  icons: {
+    icon: "/favicon.png", // ya favicon.ico
+  },
 };
 
 export default function RootLayout({
