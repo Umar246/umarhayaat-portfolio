@@ -85,7 +85,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold">Email</h3>
-                    <p className="text-white-200">umarhayaat2003@gmail.com</p>
+                    <p className="text-white-200">umarhayaat.dev@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -110,7 +110,7 @@ const Footer = () => {
                 </div>
               </div>
               {/* Direct Contact Button */}
-              {/* <Link href="mailto:umarhayaat2003@gmail.com">
+              {/* <Link href="mailto:umarhayaat.dev@gmail.com">
                 <MagicButton
                   title="Send Direct Email"
                   icon={<FaLocationArrow />}
