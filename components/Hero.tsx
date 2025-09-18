@@ -56,7 +56,7 @@ const Hero = () => {
           />
         </div>
         {/* Enhanced Grid background with gradient overlay */}
-        <div className="relative flex h-full w-full items-center justify-center dark:bg-grid-white/[0.2] bg-white dark:bg-black-100">
+        <div className="relative flex h-full w-full items-center justify-center dark:bg-grid-white/[0.2]  dark:bg-black-100">
           <div
             className={cn(
               "absolute inset-0",
@@ -67,7 +67,7 @@ const Hero = () => {
             )}
           />
 
-          <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radialgradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100" />
+          <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radialgradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100" />
           {/* Floating particles animation */}
           <div className="absolute inset-0 overflow-hidden">
             {[...Array(20)].map((_, i) => (
