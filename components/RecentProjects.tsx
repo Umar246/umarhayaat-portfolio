@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { FaGithub, FaExternalLinkAlt, FaEye } from "react-icons/fa";
 import { projects } from "@/data";
@@ -11,6 +12,7 @@ const RecentProjects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [activeTab, setActiveTab] = useState<"coding" | "wordpress">("coding");
 
   const handleProjectClick = (projectId: number) => {
     setSelectedProject(projectId);
@@ -30,12 +32,19 @@ const RecentProjects = () => {
     window.open(githubLink, "_blank");
   };
 
+  const filteredProjects = projects.filter(
+    (project) => project.type === activeTab
+  );
+
   // Decide which projects to display
-  const displayedProjects = showAll ? projects : projects.slice(0, 6);
+  const displayedProjects = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, 6);
 
   return (
     <>
       <div className="py-20 mt-10 md:mt-20 text-white" id="projects">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,6 +62,36 @@ const RecentProjects = () => {
           </p>
         </motion.div>
 
+        {/* Tab Buttons */}
+        <div className="flex justify-center mb-12">
+          <div className="flex items-center justify-center text-center bg-gray-800 rounded-full pl-2 py-1">
+            {/* Coding Projects */}
+            <button
+              onClick={() => setActiveTab("coding")}
+              className={`px-6 py-2 text-sm font-medium cursor-pointer rounded-full transition-all duration-300 ${
+                activeTab === "coding"
+                  ? "bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md"
+                  : "text-gray-200 hover:text-purple-400"
+              }`}
+            >
+              Coding
+            </button>
+            {/* WordPress Projects */}
+            <button
+              onClick={() => setActiveTab("wordpress")}
+              className={`px-6 py-2 text-sm font-medium cursor-pointer rounded-full transition-all duration-300 ${
+                activeTab === "wordpress"
+                  ? "bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md"
+                  : "text-gray-200 hover:text-purple-400"
+              }`}
+            >
+              WordPress
+            </button>
+              
+          </div>
+        </div>
+
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {displayedProjects.map((item, index) => (
             <motion.div
@@ -66,6 +105,7 @@ const RecentProjects = () => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl md:rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 cursor-pointer h-full">
+                {/* Project Image */}
                 <div className="relative h-32 md:h-64 overflow-hidden">
                   <motion.img
                     src={item.img}
@@ -74,11 +114,15 @@ const RecentProjects = () => {
                     whileHover={{ scale: 1.05 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Category */}
                   <div className="absolute top-4 right-4">
                     <span className="px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/30 backdrop-blur-sm">
                       {item.category}
                     </span>
                   </div>
+
+                  {/* Hover Actions */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{
@@ -111,7 +155,7 @@ const RecentProjects = () => {
                     {!item.liveLink && (
                       <button
                         onClick={() => handleProjectClick(item.id)}
-                        className="px-4 py-2 bg-purple-600/90 hover:bg-purple-700 cursor-pointer text-white rounded-lg transition-colors flex items-center justify-center gap-2 flex-1 duration-200 backdrop-blur-sm"
+                        className="px-4 py-2 flex-1 flex items-center justify-center gap-2 bg-purple-600/90 hover:bg-purple-700 cursor-pointer text-white rounded-lg transition-colors duration-200 backdrop-blur-sm"
                       >
                         <FaEye className="w-3 h-3" />
                         <span className="text-sm font-medium">Details</span>
@@ -120,6 +164,7 @@ const RecentProjects = () => {
                   </motion.div>
                 </div>
 
+                {/* Project Details */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
                     {item.title}
@@ -127,6 +172,8 @@ const RecentProjects = () => {
                   <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">
                     {item.shortDescription}
                   </p>
+
+                  {/* Technologies */}
                   <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                       {item.technologies.slice(0, 4).map((tech, techIndex) => (
@@ -144,6 +191,8 @@ const RecentProjects = () => {
                       )}
                     </div>
                   </div>
+
+                  {/* Status */}
                   <div className="flex items-center justify-center md:justify-end pt-3">
                     <span
                       className={`px-8 py-2 rounded-full w-full text-center md:w-auto text-xs font-medium backdrop-blur-sm ${
@@ -157,6 +206,7 @@ const RecentProjects = () => {
                   </div>
                 </div>
 
+                {/* Hover Overlay */}
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 blur-sm" />
                 </div>
@@ -173,18 +223,6 @@ const RecentProjects = () => {
           viewport={{ once: true }}
           className="text-center mt-8 md:mt-14"
         >
-          {/* <button
-            onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105"
-          >
-            {showAll ? "Show Less" : "Show More"}
-            {showAll ? (
-              <MdExpandLess className="w-4 h-4" />
-            ) : (
-              <MdExpandMore className="w-4 h-4" />
-            )}
-          </button> */}
-
           <MagicButton
             title={showAll ? "Show Less" : "Show More"}
             icon={
@@ -198,17 +236,10 @@ const RecentProjects = () => {
             otherClasses="gap-2 px-6 py-3 text-base"
             handleClick={() => setShowAll(!showAll)}
           />
-
-          {/* <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105"
-          >
-            <span className="font-medium">Start a Project</span>
-            <FaLocationArrow className="w-4 h-4" />
-          </a> */}
         </motion.div>
       </div>
 
+      {/* Project Detail Modal */}
       <AnimatePresence>
         {selectedProject && (
           <ProjectDetail

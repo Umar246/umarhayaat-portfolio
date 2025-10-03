@@ -130,7 +130,7 @@ const Hero = () => {
             className="mb-6"
           >
             <h2 className="text-xl md:text-2xl lg:text-3xl text-purple-300 font-semibold">
-              MERN Stack & React Native Developer
+              MERN Stack & Wordpress Website Developer
             </h2>
             <div className="flex items-center justify-center mt-2 space-x-2">
               <span className="w-12 h-[2px] bg-gradient-to-r from-purple-500 to-blue-500"></span>
@@ -149,11 +149,11 @@ const Hero = () => {
           >
             <TextGenerateEffect
               className="text-center text-lg md:text-xl lg:text-2xl max-w-4xl"
-              words="Transforming Ideas into Powerful Digital Solutions with Modern Web & Mobile Technologies"
+              words="Transforming Ideas into Powerful Digital Solutions with Modern Web Technologies"
             />
-            <p className="text-center text-gray-300 md:tracking-wider mt-4 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
+            <p className="text-center text-gray-200 md:tracking-wider mt-4 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
               I&apos;m Umar Hayaat, passionate about creating seamless user
-              experiences through innovative web applications and mobile
+              experiences through innovative web applications and wordpress website
               solutions. Specialized in building scalable, performance-optimized
               applications using the latest technologies.
             </p>
@@ -172,10 +172,14 @@ const Hero = () => {
               {[
                 "React.js",
                 "Next.js",
+                "Express.js",
                 "Node.js",
-                "MongoDB",
-                "React Native",
-                "TypeScript",
+                // "MongoDB",
+                // "React Native",
+                "JavaScript",
+                "Wordpress",
+                "Elementor",
+                "WooCommerce",
               ].map((tech, index) => (
                 <motion.span
                   key={tech}

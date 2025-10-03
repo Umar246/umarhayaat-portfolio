@@ -4,7 +4,6 @@ export const navItems = [
   { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
-
 export const gridItems = [
   {
     id: 1,
@@ -46,7 +45,6 @@ export const gridItems = [
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-
   {
     id: 5,
     title: "Currently building an Ecommerce Project",
@@ -68,7 +66,6 @@ export const gridItems = [
     spareImg: "",
   },
 ];
-
 export const projects = [
   {
     id: 1,
@@ -122,6 +119,7 @@ export const projects = [
     githubLink: "https://github.com/Umar246/complete-ecommerce-store",
     status: "In Development",
     category: "Full-Stack E-Commerce",
+    type: "coding",
   },
   {
     id: 2,
@@ -155,6 +153,7 @@ export const projects = [
     githubLink: "https://github.com/Umar246/Sticky-Wall-Web-App",
     status: "Completed",
     category: "Task Management App",
+    type: "coding",
   },
   {
     id: 7,
@@ -203,6 +202,7 @@ export const projects = [
     githubLink: "https://github.com/Umar246/salon-website",
     status: "Completed",
     category: "Business Website",
+    type: "coding",
   },
   {
     id: 8,
@@ -236,6 +236,7 @@ export const projects = [
     githubLink: "https://github.com/qasim9872/citywide-travels",
     status: "Completed",
     category: "Transportation App",
+    type: "coding",
   },
   {
     id: 3,
@@ -262,6 +263,7 @@ export const projects = [
     githubLink: "https://github.com/Umar246/axc-web-app",
     status: "Completed",
     category: "Business Web Application",
+    type: "coding",
   },
   {
     id: 4,
@@ -296,6 +298,7 @@ export const projects = [
     githubLink: "https://github.com/Umar246/Student-Management-System",
     status: "Completed",
     category: "Educational Management System",
+    type: "coding",
   },
   {
     id: 5,
@@ -328,6 +331,7 @@ export const projects = [
     githubLink: "https://github.com/Umar246/electon-store-website",
     status: "Completed",
     category: "E-Commerce Website",
+    type: "coding",
   },
   {
     id: 6,
@@ -354,8 +358,8 @@ export const projects = [
     githubLink: "https://github.com/Umar246/Doctor-Appointment",
     status: "Completed",
     category: "Healthcare Management",
+    type: "coding",
   },
-
   {
     id: 9,
     title: "Portfolio Website",
@@ -387,9 +391,76 @@ export const projects = [
     githubLink: "https://github.com/Umar246/umarhayaat-portfolio",
     status: "In Development",
     category: "Portfolio Website",
+    type: "coding",
+  },
+  {
+    id: 10,
+    title: "WordPress E-commerce Store",
+    shortDescription:
+      "Custom WordPress e-commerce solution with WooCommerce integration.",
+    fullDescription:
+      "A fully customized e-commerce website built on WordPress using WooCommerce. Features include product management, secure payment gateways, order tracking, and a responsive design. Developed with custom themes and plugins to meet specific business requirements, ensuring a unique and branded online shopping experience.",
+    img: "/projects/wordpress/ecommerce.png", // Placeholder image
+    images: ["/projects/wordpress/ecommerce.png"],
+    technologies: [
+      "WordPress",
+      "WooCommerce",
+      "Elementor",
+      "PHP",
+      "MySQL",
+      "CSS3",
+    ],
+    iconLists: ["/wordpress.svg", "/php.svg", "/mysql.svg"], // Placeholder icons
+    features: [
+      "Product Catalog Management",
+      "Secure Payment Gateways",
+      "Order Management",
+      "Responsive Design",
+      "Custom Theme Development",
+      "Plugin Integration",
+      "SEO Friendly",
+      "User Accounts",
+    ],
+    liveLink: "#", // Placeholder link
+    githubLink: "#", // Placeholder link
+    status: "Completed",
+    category: "WordPress E-Commerce",
+    type: "wordpress",
+  },
+  {
+    id: 11,
+    title: "WordPress Business Portfolio",
+    shortDescription:
+      "Professional business portfolio website built with WordPress.",
+    fullDescription:
+      "A sleek and professional business portfolio website developed using WordPress. Showcases services, client testimonials, and a project gallery with a modern, responsive design. Utilizes popular page builders and custom CSS for a unique look and feel, providing an easy-to-manage platform for businesses to present their work.",
+    img: "/projects/wordpress/portfolio.png", // Placeholder image
+    images: ["/projects/wordpress/portfolio.png"],
+    technologies: [
+      "WordPress",
+      "Elementor",
+      "ACF (Advanced Custom Fields)",
+      "CSS3",
+      "JavaScript",
+    ],
+    iconLists: ["/wordpress.svg", "/js.svg", "/css.svg"], // Placeholder icons
+    features: [
+      "Responsive Design",
+      "Service Showcase",
+      "Project Gallery",
+      "Client Testimonials",
+      "Contact Forms",
+      "SEO Optimization",
+      "Easy Content Management",
+      "Blog Integration",
+    ],
+    liveLink: "#", // Placeholder link
+    githubLink: "#", // Placeholder link
+    status: "Completed",
+    category: "WordPress Portfolio",
+    type: "wordpress",
   },
 ];
-
 export const testimonials = [
   {
     quote:
@@ -414,20 +485,19 @@ export const testimonials = [
   },
   {
     quote:
-      "I approached Umar with a challenging project timeline, and he delivered beyond what I thought was possible. His deep understanding of the MERN stack allowed him to quickly grasp our requirements and propose innovative solutions. The performance optimizations he implemented resulted in 60% faster load times. His communication was excellent throughout the project, and he was always available to address any concerns. A true professional who genuinely cares about client success.",
-    name: "Robert Chen",
-    location: "Toronto, Canada",
-    image: "/profile5.jpg",
+      "I approached Umar with a challenging project timeline, and he delivered beyond what I thought was possible. His deep understanding of the MERN stack allowed him to quickly grasp our requirements and propose innovative solutions. The performance optimizations he implemented resulted in 60% faster load times. His communication was excellent throughout the project, and he was always available to address any questions or concerns. A true professional and a pleasure to work with.",
+    name: "David Chen",
+    location: "New York, USA",
+    image: "/profile3.jpg",
   },
   {
     quote:
-      "Umar transformed our outdated website into a modern, responsive platform that perfectly represents our brand. His expertise in Next.js and Tailwind CSS was evident in the clean, professional design and smooth user experience. What sets him apart is his ability to balance technical excellence with business understanding. He didn't just build what we asked for; he built what we actually needed. Our online conversions have increased by 35% since the launch.",
-    name: "Ayesha Malik",
+      "Umar is an outstanding developer who consistently delivers high-quality work. He was instrumental in developing our educational management system, implementing complex features with ease and precision. His problem-solving skills and dedication to the project were exceptional. He's a valuable asset to any team and I look forward to collaborating with him again.",
+    name: "Aisha Rahman",
     location: "Dubai, UAE",
-    image: "/profile3.jpg",
+    image: "/profile5.jpg",
   },
 ];
-
 export const companies = [
   {
     id: 1,
@@ -443,14 +513,14 @@ export const companies = [
   },
   {
     id: 3,
-    name: "HOSTINGER",
+    name: "hostinger",
     img: "/host.svg",
     nameImg: "/hostName.svg",
   },
   {
     id: 4,
     name: "stream",
-    img: "/s.svg",
+    img: "/stream.svg",
     nameImg: "/streamName.svg",
   },
   {
@@ -460,52 +530,50 @@ export const companies = [
     nameImg: "/dockerName.svg",
   },
 ];
-
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Intern - UK Client",
-    desc: "Started as a frontend intern, learning real-world React.js practices while building components and fixing bugs.",
-    className: "md:col-span-2",
+    title: "Wordpress Developer",
+    desc: "Assisted in the development of a web-based platform using Wordpress, enhancing interactivity and user experience.",
+    className: "md:col-span-2", 
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Junior Frontend Developer",
-    desc: "Took ownership of UI development tasks, implemented responsive designs using React, Tailwind CSS, and integrated APIs.",
-    className: "md:col-span-2",
+    title: "MERN Stack Developer",
+    desc: "Developed and maintained user-facing features using MERN stack technologies.",
+    className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Full Stack Developer - Freelance",
-    desc: "Built a complete MERN stack app for a client, handling everything from backend APIs to frontend UI and deployment.",
-    className: "md:col-span-2",
+    title: "Freelance Web Dev Project",
+    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "React & Redux Expert - Client Project",
-    desc: "Led state management refactors using Redux Toolkit and optimized performance across complex frontend modules.",
+    title: "Lead Frontend Developer",
+    desc: "Developed and maintained user-facing features using modern frontend technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
 ];
-
-// export const socialMedia = [
-//   {
-//     id: 1,
-//     img: "/git.svg",
-//     link:"https://github.com/umarhayaat"
-//   },
-//   {
-//     id: 2,
-//     img: "/twit.svg",
-//     link:"https://twitter.com/umarhayaat"
-//   },
-//   {
-//     id: 3,
-//     img: "/link.svg",
-//     link:"https://www.linkedin.com/in/umarhayaat/"
-//   },
-// ];
+export const socialMedia = [
+  {
+    id: 1,
+    img: "/git.svg",
+    link: "https://github.com/Umar246",
+  },
+  // {
+  //   id: 2,
+  //   img: "/twit.svg",
+  //   link:"https://twitter.com/umarhayaat"
+  // },
+  {
+    id: 3,
+    img: "/link.svg",
+    link: "https://www.linkedin.com/in/umarhayaat/",
+  },
+];
