@@ -28,8 +28,8 @@ const Hero = () => {
   };
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/cv/Umar Hayaat_Resume.pdf";
-    link.download = "Umar_Hayaat_CV.pdf";
+    link.href = "/cv/Umar_Hayaat Resume.pdf";
+    link.download = "Umar_Hayaat_Resume.pdf";
     link.click();
   };
   return (
