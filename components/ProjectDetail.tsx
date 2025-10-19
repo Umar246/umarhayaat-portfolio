@@ -124,18 +124,22 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
               <div>
                 <p className="text-sm py-4 text-purple">
                   Sorry, due to privacy concerns, the live demo is not
-                  available. However, you can still explore the source code on
-                  GitHub.
+                  available.{" "}
+                  {project.type === "coding"
+                    ? "However, you can still explore the source code on GitHub"
+                    : "But you can see the project details and features here"}
                 </p>
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-2 border border-white/20 rounded-lg text-white hover:bg-white/10 transition-colors">
-                    <FaGithub /> View Source Code
-                  </button>
-                </a>
+                {project.type === "coding" && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-2 border border-white/20 rounded-lg text-white hover:bg-white/10 transition-colors">
+                      <FaGithub /> View Source Code
+                    </button>
+                  </a>
+                )}
               </div>
             </div>
           </div>

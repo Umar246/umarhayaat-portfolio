@@ -156,7 +156,7 @@ export const projects = [
     type: "coding",
   },
   {
-    id: 7,
+    id: 3,
     title: "Salon Management Website",
     shortDescription:
       "Professional salon website with service booking and portfolio showcase",
@@ -205,7 +205,7 @@ export const projects = [
     type: "coding",
   },
   {
-    id: 8,
+    id: 4,
     title: "Citywide Travels - Taxi Booking",
     shortDescription:
       "Taxi booking web application with route planning and fare calculation",
@@ -239,7 +239,7 @@ export const projects = [
     type: "coding",
   },
   {
-    id: 3,
+    id: 5,
     title: "AXC Business Web App",
     shortDescription:
       "Modern business web application with responsive design and Tailwind CSS",
@@ -266,7 +266,7 @@ export const projects = [
     type: "coding",
   },
   {
-    id: 4,
+    id: 6,
     title: "Student Management System",
     shortDescription:
       "Comprehensive student data management system with Firebase integration",
@@ -301,7 +301,7 @@ export const projects = [
     type: "coding",
   },
   {
-    id: 5,
+    id: 7,
     title: "Electon Electronics Store",
     shortDescription:
       "Modern electronics e-commerce website with product showcase and responsive design",
@@ -334,7 +334,7 @@ export const projects = [
     type: "coding",
   },
   {
-    id: 6,
+    id: 8,
     title: "Doctor Appointment System",
     shortDescription:
       "Healthcare appointment booking system with patient management features",
@@ -395,25 +395,29 @@ export const projects = [
   },
   {
     id: 10,
-    title: "WordPress E-commerce Store",
+    title: "Clothing Store with WooCommerce",
     shortDescription:
-      "Custom WordPress e-commerce solution with WooCommerce integration.",
+      "Custom WordPress e-commerce solution with WooCommerce integration",
     fullDescription:
       "A fully customized e-commerce website built on WordPress using WooCommerce. Features include product management, secure payment gateways, order tracking, and a responsive design. Developed with custom themes and plugins to meet specific business requirements, ensuring a unique and branded online shopping experience.",
-    img: "/projects/wordpress/ecommerce.png", // Placeholder image
-    images: ["/projects/wordpress/ecommerce.png"],
-    technologies: [
-      "WordPress",
-      "WooCommerce",
-      "Elementor",
-      "PHP",
-      "MySQL",
-      "CSS3",
+    img: "/projects/wordpressClothingStore/coverImg.png", // Placeholder image
+    images: [
+      "/projects/wordpressClothingStore/img1.png",
+      "/projects/wordpressClothingStore/img2.png",
+      "/projects/wordpressClothingStore/img3.png",
+      "/projects/wordpressClothingStore/img4.png",
+      "/projects/wordpressClothingStore/img5.png",
+      "/projects/wordpressClothingStore/img6.png",
+      "/projects/wordpressClothingStore/img7.png",
+      "/projects/wordpressClothingStore/img8.png",
+      "/projects/wordpressClothingStore/img9.png",
+      "/projects/wordpressClothingStore/img10.png",
     ],
+    technologies: ["WordPress", "WooCommerce", "Elementor", "Other plugings"],
     iconLists: ["/wordpress.svg", "/php.svg", "/mysql.svg"], // Placeholder icons
     features: [
       "Product Catalog Management",
-      "Secure Payment Gateways",
+      "Secure Payment Method",
       "Order Management",
       "Responsive Design",
       "Custom Theme Development",
@@ -421,43 +425,87 @@ export const projects = [
       "SEO Friendly",
       "User Accounts",
     ],
-    liveLink: "#", // Placeholder link
-    githubLink: "#", // Placeholder link
+
     status: "Completed",
     category: "WordPress E-Commerce",
     type: "wordpress",
   },
   {
     id: 11,
-    title: "WordPress Business Portfolio",
+    title: "WordPress School Management System",
     shortDescription:
-      "Professional business portfolio website built with WordPress.",
+      "Professional school management system built with WordPress.",
     fullDescription:
-      "A sleek and professional business portfolio website developed using WordPress. Showcases services, client testimonials, and a project gallery with a modern, responsive design. Utilizes popular page builders and custom CSS for a unique look and feel, providing an easy-to-manage platform for businesses to present their work.",
-    img: "/projects/wordpress/portfolio.png", // Placeholder image
-    images: ["/projects/wordpress/portfolio.png"],
-    technologies: [
-      "WordPress",
-      "Elementor",
-      "ACF (Advanced Custom Fields)",
-      "CSS3",
-      "JavaScript",
+      "A comprehensive, Role-Based School Management System (WPSchoolPress) built on WordPress. Features include dedicated modules for Students, Teachers, Parents, Classes, and Attendance Tracking, all accessible via an intuitive, real-time dashboard.",
+    img: "/projects/wordpressSchoolManagement/coverImg.png", // Placeholder image
+    images: [
+      "/projects/wordpressSchoolManagement/img1.png",
+      "/projects/wordpressSchoolManagement/img2.png",
+      "/projects/wordpressSchoolManagement/img3.png",
+      "/projects/wordpressSchoolManagement/img4.png",
+      "/projects/wordpressSchoolManagement/img5.png",
+      "/projects/wordpressSchoolManagement/img6.png",
+      "/projects/wordpressSchoolManagement/img7.png",
+      "/projects/wordpressSchoolManagement/img8.png",
+      "/projects/wordpressSchoolManagement/img9.png",
+      "/projects/wordpressSchoolManagement/img10.png",
     ],
+    technologies: ["WordPress", "Elementor", "WP School Press Plugin", "Other"],
     iconLists: ["/wordpress.svg", "/js.svg", "/css.svg"], // Placeholder icons
     features: [
-      "Responsive Design",
-      "Service Showcase",
-      "Project Gallery",
-      "Client Testimonials",
-      "Contact Forms",
-      "SEO Optimization",
-      "Easy Content Management",
-      "Blog Integration",
+      "Dashboard",
+      "Teachers",
+      "Students",
+      "Parents",
+      "Classes Management",
+      "Attendance Tracking",
+      "Events Management",
+      "Notify",
+      "Much more",
     ],
-    liveLink: "#", // Placeholder link
-    githubLink: "#", // Placeholder link
     status: "Completed",
-    category: "WordPress Portfolio",
+    category: "WordPress School Management",
+    type: "wordpress",
+  },
+  {
+    id: 12,
+    title: "GlamStore E-commerce Website",
+    shortDescription:
+      "Modern, responsive e-commerce platform for cosmetics and beauty products.",
+    fullDescription:
+      "A fully functional e-commerce store (GlamStore) built on WordPress/WooCommerce for selling cosmetics and beauty products. The site features a clean, responsive design, robust product filtering by category and price, and top-rated product showcases. It is optimized for mobile shopping with a seamless cart and checkout experience, and integrates essential e-commerce tools for tracking orders and managing inventory.",
+    img: "/projects/wordpressCosmeticStore/coverImg.png", // Replace with an actual cover image path for GlamStore
+    images: [
+      "/projects/wordpressCosmeticStore/img1.png", // Your attached screenshot
+      "/projects/wordpressCosmeticStore/img2.png",
+      "/projects/wordpressCosmeticStore/img3.png",
+      "/projects/wordpressCosmeticStore/img4.png",
+      "/projects/wordpressCosmeticStore/img5.png",
+      "/projects/wordpressCosmeticStore/img6.png",
+      "/projects/wordpressCosmeticStore/img7.png",
+      "/projects/wordpressCosmeticStore/img8.png",
+      // Add more screenshots of the homepage, product page, cart, and checkout
+    ],
+    technologies: [
+      "WordPress",
+      "WooCommerce",
+      "Elementor",
+      "Custom CSS",
+      "Payment Gateway Integration",
+    ],
+    iconLists: ["/wordpress.svg", "/woocommerce.svg", "/css.svg"], // Placeholder icons, adjust as needed
+    features: [
+      "Product Browsing & Filtering (by Price/Category)",
+      "Top-Rated Product Showcase",
+      "Shopping Cart & Wishlist Functionality",
+      "Secure Checkout Process",
+      "Order Tracking (Track Order)",
+      "Global & Local Shipping Options",
+      "Sales/Discount Display (-20%, -30% badges)",
+      "Responsive Mobile Design",
+    ],
+    status: "Completed",
+    category: "Ecommerce WooCommerce",
     type: "wordpress",
   },
 ];
@@ -535,7 +583,7 @@ export const workExperience = [
     id: 1,
     title: "Wordpress Developer",
     desc: "Assisted in the development of a web-based platform using Wordpress, enhancing interactivity and user experience.",
-    className: "md:col-span-2", 
+    className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {

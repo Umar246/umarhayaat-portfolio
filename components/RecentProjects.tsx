@@ -143,15 +143,17 @@ const RecentProjects = () => {
                         </span>
                       </button>
                     )}
-                    <button
-                      onClick={(e) => handleGithubView(e, item.githubLink)}
-                      className="flex-1 flex items-center justify-center gap-2 px-2 py-2 bg-gray-700/70 hover:bg-gray-700 text-white cursor-pointer rounded-lg transition-colors duration-200 backdrop-blur-sm"
-                    >
-                      <FaGithub className="w-3 h-3" />
-                      <span className="text-sm font-medium hidden md:inline">
-                        Code
-                      </span>
-                    </button>
+                    {item?.type == "coding" && (
+                      <button
+                        onClick={(e) => handleGithubView(e, item.githubLink)}
+                        className="flex-1 flex items-center justify-center gap-2 px-2 py-2 bg-gray-700/70 hover:bg-gray-700 text-white cursor-pointer rounded-lg transition-colors duration-200 backdrop-blur-sm"
+                      >
+                        <FaGithub className="w-3 h-3" />
+                        <span className="text-sm font-medium hidden md:inline">
+                          Code
+                        </span>
+                      </button>
+                    )}
                     {!item.liveLink && (
                       <button
                         onClick={() => handleProjectClick(item.id)}
